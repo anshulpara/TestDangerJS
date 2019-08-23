@@ -1,2 +1,3 @@
 *.DS_Store
+*.lock
 TestDangerJS.xcodeproj/project.xcworkspace/xcuserdata/
