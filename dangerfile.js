@@ -8,7 +8,6 @@ const {danger, warn} = require('danger')
 
 
 danger.git.created_files.forEach(filePath => {
-                                 path.resolve(__dirname, filePath)
                                  if (!filePath.includes('/')) {
                                  fail(`Failed because a new file is being added in the root directory: ${filePath}`);
                                  }})
