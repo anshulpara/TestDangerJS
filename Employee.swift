@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TestDangerJS/Employee.swift
 class Employee: NSObject {
 
 }
