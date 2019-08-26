@@ -1,5 +1,5 @@
 {
-  "dependencies": {
-    "danger": "^9.0.0"
+  "devDependencies": {
+    "danger": "^9.1.3"
   }
 }
