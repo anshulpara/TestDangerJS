@@ -1,5 +1,3 @@
-export DANGER_GITHUB_API_TOKEN='a718f019e741232ad2d13c65dbada4c0db98818f'
-
 const {danger, warn} = require('danger')
 const {danger, includes} = require('danger')
 
