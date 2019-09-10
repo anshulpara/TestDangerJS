@@ -1,9 +1,18 @@
-const {danger, warn} = require('danger')
+const {danger, fail, message, warn} = require('danger');
 
-  
-// No PR is too small to include a description of why you made a change
-if (danger.github.pr.body.length < 10) {
-  warn('Please include a description of your PR changes.');
+// Fail if a new file is added to a root directory
+//danger.git.created_files.forEach(filePath => {
+//                                 if (!filePath.includes('/')) {
+//                                 fail(`Failed because a new file is being added in the root directory: ${filePath}`);
+//                                 }})
+
+
+danger.git.created_files.forEach(filePath => {
+                                 if (!filePath.includes('/')) {
+                                 fail(`Failed because a new file is being added in the root directory: ${filePath}`);
+                                 }})
+
+const rootDirectoryFiles = danger.git.created_files.filter(filePath => !filePath.includes('/'))
+if (rootDirectoryFiles.length > 0) {
+    fail(`Failed because these new files are being added in the root directory: ${rootDirectoryFiles.join(", ")}`);
 }
-
-  
